@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.teligen.dy</groupId>
+    <artifactId>base-parent</artifactId>
+    <version>1.0.0-Alpha</version>
+    <packaging>pom</packaging>
+    <name>base-parent</name>
+    <description>base-parent：版本管理</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <swagger.version>2.9.2</swagger.version>
+        <springboot.version>2.0.0.RELEASE</springboot.version>
+        <hadoop.version>2.7.7</hadoop.version>
+        <mrunit.version>1.1.0</mrunit.version>
+    </properties>
+
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot web 依赖  start -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- springboot web 依赖  end -->
+
+            <!-- hadoop相关依赖 start -->
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-client</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-minicluster</artifactId>
+                <version>${hadoop.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.mrunit</groupId>
+                <artifactId>mrunit</artifactId>
+                <version>${mrunit.version}</version>
+                <classifier>hadoop2</classifier>
+                <scope>test</scope>
+            </dependency>
+            <!-- hadoop相关依赖 end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <!--<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>-->
+
+</project>
